@@ -7,7 +7,7 @@ let gameAnswer;
 let gamePoints;
 let textValue;
 function fetchNewQuestion() {
-  fetch('https://jservice.io/api/random')
+  fetch('http://jservice.io/api/random')
     .then(responseObject => responseObject.json())
     .then(
       hydratedBody => (
@@ -26,7 +26,8 @@ function getUserText() {
   console.log(textValue);
   if (textValue.toLowerCase() === gameAnswer.toLowerCase()) {
     alert('correct');
-    points.textContent += gamePoints;
+    gamePoints += gamePoints;
+    points.textContent = gamePoints;
     fetchNewQuestion();
   } else {
     alert('incorrect');
