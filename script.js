@@ -2,11 +2,12 @@ const output = document.getElementById('output');
 const textField = document.getElementById('textField');
 const submitBtn = document.getElementById('submit');
 const points = document.getElementById('points');
-const catagoryOut = document.getElementById('category');
+const categoryOut = document.getElementById('category');
 let gameQuestion;
 let gameAnswer;
 let gamePoints;
 let textValue;
+let category;
 function fetchNewQuestion() {
   fetch('https://jservice.io/api/random')
     .then(responseObject => responseObject.json())
@@ -15,7 +16,8 @@ function fetchNewQuestion() {
         (gameQuestion = hydratedBody[0].question),
         (gameAnswer = hydratedBody[0].answer),
         (output.textContent = gameQuestion),
-        (gamePoints = hydratedBody[0].value)
+        (gamePoints = hydratedBody[0].value),
+        (categoryOut.textContent = hydratedBody[0].category.title)
       )
     );
 }
