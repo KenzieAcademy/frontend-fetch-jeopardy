@@ -28,3 +28,5 @@ Now it's time to use `fetch()` to make some GET requests and do something semi-i
 5. Submit a pull request to the *original* repo.
 6. On the PR, add a comment with a link to your GitHub Page for your project.
 7. On Canvas, submit a link to your PR.
+###
+fetch("https://jsonplaceholder.typicode.com/posts/1/")
