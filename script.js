@@ -7,7 +7,7 @@ let gameAnswer;
 let gamePoints;
 let textValue;
 function fetchNewQuestion() {
-  fetch('http://jservice.io/api/random')
+  fetch('https://jservice.io/api/random')
     .then(responseObject => responseObject.json())
     .then(
       hydratedBody => (
