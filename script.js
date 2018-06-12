@@ -2,12 +2,13 @@ const output = document.getElementById('output');
 const textField = document.getElementById('textField');
 const submitBtn = document.getElementById('submit');
 const points = document.getElementById('points');
+const catagoryOut = document.getElementById('category');
 let gameQuestion;
 let gameAnswer;
 let gamePoints;
 let textValue;
 function fetchNewQuestion() {
-  fetch('http://jservice.io/api/random')
+  fetch('https://jservice.io/api/random')
     .then(responseObject => responseObject.json())
     .then(
       hydratedBody => (
