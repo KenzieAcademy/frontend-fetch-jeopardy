@@ -1,0 +1,40 @@
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#input {
+  width: 50vw;
+}
+
+#submit {
+  width: 20vw;
+
+}
+
+article {
+  margin: 1vmin;
+}
+/* .container {
+    display: inline-flex;
+    flex-direction: column;
+    border: black solid 1px;
+    pointer-events: none;
+}
+
+.row {
+    display: flex;
+    pointer-events: none; 
+}
+
+.cell {
+    height: 15vmin;
+    width: 15vmin;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+    border: 1px black solid;
+} */
