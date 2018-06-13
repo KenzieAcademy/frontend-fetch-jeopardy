@@ -1,40 +1,40 @@
-const output = document.getElementById("output")
-let answer = ""
-let score = ""
+const output = document.getElementById("output");
+let answer = "";
+let points;
 
 function getQuestion() {
 
     fetch("http://jservice.io/api/random")
         .then(responseObject => responseObject.json())
         .then(hydratedBody => {
-            console.log(hydratedBody)
+            console.log(hydratedBody);
             output.dataset.characterId = hydratedBody.id
-            output.querySelector("h1").textContent = `${hydratedBody[0].question}`
+            output.querySelector("h2").textContent = `${hydratedBody[0].category.title}`
+            output.querySelector("h3").textContent = `${hydratedBody[0].question}`
             answer = hydratedBody[0].answer
-            console.log(answer)
-            score = hydratedBody[0].value
+            points = hydratedBody[0].value
+            console.log(points);
+            console.log(answer);
+
         })
     document.getElementById("nextQuestion").addEventListener("click", getQuestion);
-
 }
 
 getQuestion();
 
 
 
-
-
 function checkAnswerBox() {
     const typedText = document.getElementById("input").value;
 
-    if (typedText.toLowerCase === answer.toLowerCase) {
+    if (typedText.toLowerCase() === answer.toLowerCase()) {
         let div = document.createElement("div");
-        let response = document.createTextNode("That is Correct!");
+        let response = document.createTextNode(("That is Correct! ") + points + (" points"));
         div.appendChild(response);
-        document.getElementById("result").appendChild(div);
+        document.getElementById("result").appendChild(div)
     } else {
         let div = document.createElement("div");
-        let response = document.createTextNode("WRONG!")
+        let response = document.createTextNode("WRONG! 0 points");
         div.appendChild(response);
         document.getElementById("result").appendChild(div)
     }
@@ -45,3 +45,7 @@ document.getElementById("input").addEventListener("keyup", function (event) {
         checkAnswerBox()
     }
 })
+
+function resetResponse() {
+
+}

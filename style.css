@@ -1,0 +1,17 @@
+body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-family: 'Fascinate', cursive;
+    color: blue;
+    text-align: center;
+    font-size: 4em;
+}
+
+h2 {
+    text-transform: capitalize;
+}
