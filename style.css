@@ -1,3 +1,7 @@
+html,
+body {
+  box-sizing: border-box;
+}
 body {
   display: flex;
   flex-direction: column;
@@ -8,6 +12,7 @@ input {
   margin: 0.5em;
 }
 button {
+  padding-top: 0.5em;
   height: 6em;
 }
 
@@ -19,6 +24,8 @@ h5 {
 }
 
 .nav-bar {
-  background-color: rgb(51, 172, 172);
   height: 100%;
+}
+#output {
+  height: 15vh;
 }

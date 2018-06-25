@@ -1,3 +1,5 @@
+fetchNewQuestion();
+
 const output = document.getElementById('output');
 const textField = document.getElementById('textField');
 const submitBtn = document.getElementById('submit');
@@ -36,5 +38,3 @@ function getUserText() {
     alert('incorrect');
   }
 }
-
-fetchNewQuestion();
