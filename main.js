@@ -7,16 +7,20 @@ let answer;
 let pointVal;
 let pointTot = 0;
 
-fetch("http://jservice.io/api/random")
-    .then(response => response.json())
-    .then(hydrated => {
-        question = `${hydrated[0].question}`;
-        output.textContent = question;
-        answer = `${hydrated[0].answer}`.toLowerCase();
-        pointVal = `${hydrated[0].value}`
-        console.log(answer);
-        console.log(pointVal);
-    });
+const fetchQuestion = () => {
+    fetch("http://jservice.io/api/random")
+        .then(response => response.json())
+        .then(hydrated => {
+            question = `${hydrated[0].question}`;
+            output.textContent = question;
+            answer = `${hydrated[0].answer}`.toLowerCase();
+            pointVal = `${hydrated[0].value}`
+            console.log(answer);
+            console.log(pointVal);
+        });
+};
+
+fetchQuestion();
     
 button.onclick = function() {
     let playAns = input.value.toLowerCase();
@@ -26,7 +30,9 @@ button.onclick = function() {
         console.log(pointTot);
         pointTot += Number(pointVal);
         point.textContent = pointTot;
+        fetchQuestion();
     } else {
         console.log("no");
+        fetchQuestion();
     }
 }
