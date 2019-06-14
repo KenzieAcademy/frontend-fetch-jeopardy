@@ -1,0 +1,31 @@
+html,
+body {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+div,
+button,
+input {
+  margin: 0.5em;
+}
+button {
+  padding-top: 0.5em;
+  height: 6em;
+}
+
+input {
+  max-width: 70vw;
+}
+h5 {
+  font-style: italic;
+}
+
+.nav-bar {
+  height: 100%;
+}
+#output {
+  height: 15vh;
+}
